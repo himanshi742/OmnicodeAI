@@ -30,7 +30,7 @@ export default function FloatingWidgets() {
   useEffect(() => {
     const fetchFaqs = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/support/faqs');
+        const res = await axios.get('https://omnicode-ai-backend-topaz.vercel.app/api/support/faqs');
         setFaqs(res.data);
       } catch (err) {
         console.error("Could not load FAQs", err);

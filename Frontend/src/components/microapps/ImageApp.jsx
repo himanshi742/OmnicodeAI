@@ -167,7 +167,7 @@ export default function ImageApp({ currentTask }) { // <-- 2. Receive currentTas
       const token = localStorage.getItem('omnicode_token');
       
       const response = await axios.post(
-        'http://localhost:5000/api/ai/generate-image', 
+        'https://omnicode-ai-backend-topaz.vercel.app/api/ai/generate-image', 
         { 
           prompt: cleanPrompt, // Send the cleaned prompt
           aspectRatio, 

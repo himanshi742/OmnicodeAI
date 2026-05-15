@@ -13,7 +13,7 @@ export default function AnalyticsTab() {
     const fetchAnalytics = async () => {
       try {
         const token = localStorage.getItem('omnicode_token');
-        const response = await axios.get('http://localhost:5000/api/admin/analytics', {
+        const response = await axios.get('https://omnicode-ai-backend-topaz.vercel.app/api/admin/analytics', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setData(response.data);

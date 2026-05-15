@@ -35,7 +35,7 @@ export default function ProfileView() {
     const fetchFreshProfile = async () => {
       try {
         const token = localStorage.getItem('omnicode_token');
-        const response = await axios.get('http://localhost:5000/api/users/profile', {
+        const response = await axios.get('https://omnicode-ai-backend-topaz.vercel.app/api/users/profile', {
           headers: { Authorization: `Bearer ${token}` }
         });
         

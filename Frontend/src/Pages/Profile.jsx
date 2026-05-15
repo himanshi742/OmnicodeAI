@@ -85,7 +85,7 @@ export default function Profile() {
       }
 
       const response = await axios.put(
-        'http://localhost:5000/api/users/profile',
+        'https://omnicode-ai-backend-topaz.vercel.app/api/users/profile',
         submitData,
         {
           headers: {

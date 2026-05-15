@@ -31,7 +31,7 @@ export default function VerifyOTP() {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/verify-otp', {
+      const response = await axios.post('https://omnicode-ai-backend-topaz.vercel.app/api/auth/verify-otp', {
         email,
         otp
       });
@@ -54,7 +54,7 @@ export default function VerifyOTP() {
     
     try {
       // Hits the new backend route we just created!
-      await axios.post('http://localhost:5000/api/auth/resend-otp', { email });
+      await axios.post('https://omnicode-ai-backend-topaz.vercel.app/api/auth/resend-otp', { email });
       setResendMessage('A new code has been sent!');
       setTimeout(() => setResendMessage(''), 5000); // Clear message after 5s
     } catch (err) {

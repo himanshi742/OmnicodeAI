@@ -39,7 +39,7 @@ export default function ResetPassword() {
     setError('');
 
     try {
-      await axios.post(`http://localhost:5000/api/auth/reset-password/${token}`, { 
+      await axios.post(`https://omnicode-ai-backend-topaz.vercel.app/api/auth/reset-password/${token}`, { 
         password: formData.password 
       });
       

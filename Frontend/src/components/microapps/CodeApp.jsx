@@ -223,7 +223,7 @@ export default function CodeApp({ currentTask, setShowPricingModal }) {
       }
 
       const response = await axios.post(
-        "http://localhost:5000/api/ai/generate-code",
+        "https://omnicode-ai-backend-topaz.vercel.app/api/ai/generate-code",
         {
           prompt: finalPrompt,
           provider: selectedModel.id, // Send the selected model to backend

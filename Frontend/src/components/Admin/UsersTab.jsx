@@ -30,7 +30,7 @@ export default function UsersTab() {
     setLoadingUsers(true);
     try {
       const token = localStorage.getItem('omnicode_token');
-      const response = await axios.get('http://localhost:5000/api/admin/users', {
+      const response = await axios.get('https://omnicode-ai-backend-topaz.vercel.app/api/admin/users', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUsers(response.data.users);
@@ -59,7 +59,7 @@ export default function UsersTab() {
     try {
       const token = localStorage.getItem('omnicode_token');
       // Replace with your actual PUT endpoint
-      await axios.put(`http://localhost:5000/api/admin/users/${editingUser._id}`, 
+      await axios.put(`https://omnicode-ai-backend-topaz.vercel.app/api/admin/users/${editingUser._id}`, 
         { plan: editingUser.plan, credits: editingUser.credits },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -80,7 +80,7 @@ export default function UsersTab() {
     try {
       const token = localStorage.getItem('omnicode_token');
       // Replace with your actual DELETE endpoint
-      await axios.delete(`http://localhost:5000/api/admin/users/${deletingUser._id}`, {
+      await axios.delete(`https://omnicode-ai-backend-topaz.vercel.app/api/admin/users/${deletingUser._id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

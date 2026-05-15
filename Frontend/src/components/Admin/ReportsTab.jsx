@@ -14,7 +14,7 @@ export default function ReportsTab() {
       try {
         const token = localStorage.getItem('omnicode_token');
         // Re-using your existing users endpoint to get the list
-        const response = await axios.get('http://localhost:5000/api/admin/users', {
+        const response = await axios.get('https://omnicode-ai-backend-topaz.vercel.app/api/admin/users', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUsers(response.data.users || response.data); 
@@ -64,7 +64,7 @@ export default function ReportsTab() {
     try {
       const token = localStorage.getItem('omnicode_token');
       // Hit our new endpoint
-      const response = await axios.get(`http://localhost:5000/api/admin/reports/user/${userId}`, {
+      const response = await axios.get(`https://omnicode-ai-backend-topaz.vercel.app/api/admin/reports/user/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

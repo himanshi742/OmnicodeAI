@@ -38,7 +38,7 @@ export default function Pricing() {
   useEffect(() => {
     const fetchPlans = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/settings');
+        const response = await axios.get('https://omnicode-ai-backend-topaz.vercel.app/api/settings');
         setPlans(response.data.pricingPlans);
       } catch (error) {
         console.error("Failed to fetch pricing plans:", error);
@@ -80,7 +80,7 @@ export default function Pricing() {
       const headers = { Authorization: `Bearer ${token}` };
 
       const orderResponse = await axios.post(
-        'http://localhost:5000/api/payment/create-order', 
+        'https://omnicode-ai-backend-topaz.vercel.app/api/payment/create-order', 
         { amount: parseInt(plan.price) }, 
         { headers }
       );
@@ -95,7 +95,7 @@ export default function Pricing() {
         handler: async function (response) {
           try {
             const verifyResponse = await axios.post(
-              'http://localhost:5000/api/payment/verify-payment',
+              'https://omnicode-ai-backend-topaz.vercel.app/api/payment/verify-payment',
               {
                 razorpay_payment_id: response.razorpay_payment_id,
                 razorpay_order_id: response.razorpay_order_id,

@@ -63,7 +63,7 @@ export default function Register() {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const response = await axios.post('https://omnicode-ai-backend-topaz.vercel.app/api/auth/register', formData);
       
       if (response.status === 200 || response.status === 201) {
         navigate('/verify-otp', { state: { email: formData.email } });

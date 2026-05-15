@@ -132,7 +132,7 @@ export default function ApiDocsModern() {
               <h2 className="text-2xl font-bold mb-3">Example Request</h2>
 
               <pre className="bg-black/40 p-4 rounded-lg text-green-400 text-sm">
-{`curl -X POST http://localhost:5000/api/auth/login \\
+{`curl -X POST https://omnicode-ai-backend-topaz.vercel.app/api/auth/login \\
 -H "Content-Type: application/json" \\
 -d '{"email":"user@example.com","password":"12345678"}'`}
               </pre>

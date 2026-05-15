@@ -17,7 +17,7 @@ export default function SettingsTab() {
       try {
         const token = localStorage.getItem('omnicode_token');
         // CHANGED: Point to the unified /api/settings route
-        const response = await axios.get('http://localhost:5000/api/settings', {
+        const response = await axios.get('https://omnicode-ai-backend-topaz.vercel.app/api/settings', {
           headers: { Authorization: `Bearer ${token}` }
         });
         
@@ -41,7 +41,7 @@ export default function SettingsTab() {
     try {
       const token = localStorage.getItem('omnicode_token');
       // CHANGED: Point to the unified /api/settings route
-      await axios.put('http://localhost:5000/api/settings', {
+      await axios.put('https://omnicode-ai-backend-topaz.vercel.app/api/settings', {
         maintenanceMode,
         signupEnabled,
         defaultCredits: Number(defaultCredits)

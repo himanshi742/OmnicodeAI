@@ -38,7 +38,7 @@ export default function ForgotPassword() {
 
     try {
       // Ensure you have this route set up on your backend!
-      await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
+      await axios.post('https://omnicode-ai-backend-topaz.vercel.app/api/auth/forgot-password', { email });
       
       // Show the success state animation
       setSuccess(true);

@@ -16,7 +16,7 @@ export default function CMSTab() {
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/settings');
+        const response = await axios.get('https://omnicode-ai-backend-topaz.vercel.app/api/settings');
         
         // Re-attach JSX icons to the prompts after fetching from DB
         const dbPrompts = response.data.prompts.map(p => ({
@@ -42,7 +42,7 @@ export default function CMSTab() {
       // Strip out the React icon components before sending to MongoDB
       const cleanPrompts = prompts.map(({ icon, ...rest }) => rest);
       
-      await axios.put('http://localhost:5000/api/settings', { prompts: cleanPrompts });
+      await axios.put('https://omnicode-ai-backend-topaz.vercel.app/api/settings', { prompts: cleanPrompts });
       setEditingPromptId(null);
       alert('Prompt saved successfully!');
     } catch (error) {
@@ -53,7 +53,7 @@ export default function CMSTab() {
 
   const handleSavePlan = async (id) => {
     try {
-      await axios.put('http://localhost:5000/api/settings', { pricingPlans });
+      await axios.put('https://omnicode-ai-backend-topaz.vercel.app/api/settings', { pricingPlans });
       setEditingPlanId(null);
       alert('Pricing plan saved successfully!');
     } catch (error) {

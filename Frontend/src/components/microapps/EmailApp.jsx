@@ -200,7 +200,7 @@ export default function EmailApp({ currentTask }) { // <-- 2. Receive currentTas
       // We use the existing API endpoint, but tell it we are using the 'email' appType for history
       // Inside handleGenerate in EmailApp.jsx
       const response = await axios.post(
-        'http://localhost:5000/api/ai/generate-email', 
+        'https://omnicode-ai-backend-topaz.vercel.app/api/ai/generate-email', 
         { 
           prompt: finalPrompt,
           provider: selectedModel.id // <-- ADD THIS

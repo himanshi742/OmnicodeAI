@@ -14,7 +14,7 @@ export default function BroadcastTab() {
     const fetchUsers = async () => {
       try {
         const token = localStorage.getItem('omnicode_token');
-        const response = await axios.get('http://localhost:5000/api/admin/users', {
+        const response = await axios.get('https://omnicode-ai-backend-topaz.vercel.app/api/admin/users', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUsers(response.data.users || response.data); 

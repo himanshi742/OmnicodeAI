@@ -25,7 +25,7 @@ export default function DashboardSidebar({ activeApp, setActiveApp, isCollapsed,
     const fetchHistory = async () => {
       if (!token) return;
       try {
-        const response = await axios.get('http://localhost:5000/api/history', {
+        const response = await axios.get('https://omnicode-ai-backend-topaz.vercel.app/api/history', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setHistory(response.data.history);

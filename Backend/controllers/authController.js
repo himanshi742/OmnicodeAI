@@ -208,7 +208,7 @@ exports.forgotPassword = async (req, res) => {
     await user.save();
 
     // 3. Create the Reset URL (pointing to your React frontend)
-    const resetUrl = `http://localhost:5173/reset-password/${resetToken}`; 
+    const resetUrl = `https://omnicode-ai-frontend.vercel.app/reset-password/${resetToken}`; 
 
 
     // 4. Send the Email via Nodemailer
