@@ -20,7 +20,7 @@ connectDB();
 
 const app = express();
 
-app.use(cors({ origin: ['http://localhost:5173', 'https://omnicode-ai-backend-topaz.vercel.app'] }));
+app.use(cors({ origin: ['http://localhost:5173', 'https://omnicode-ai-backend-topaz.vercel.app','https://omnicode-ai-frontend.vercel.app/'] }));
 app.use(express.json());
 
 app.get('/', (req, res) => {
